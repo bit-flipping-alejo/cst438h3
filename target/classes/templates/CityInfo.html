@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmls:th="www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Sprinkling of data</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>City Name</td>
+			<td th:text="${targetCity.Name}"></td>
+		</tr>
+		 
+		 <tr>
+			<td>Country Code</td>
+			<td th:text="${targetCountry.code}"></td>
+		</tr>
+		 
+		<tr>
+			<td>Continent</td>
+			<td th:text="${targetCountry.continent}"></td>
+		</tr>
+		
+		<tr>
+			<td>Population</td>
+			<td th:text="${targetCountry.population}"></td>
+		</tr>
+		
+		<tr>
+			<td>Temp</td>
+			<td th:text="${tnt.temp}"></td>
+		</tr>
+		
+		<tr>
+			<td>time</td>
+			<td th:text="${tnt.time}"></td>
+		</tr>
+		
+		
+	</table>
+
+</body>
+</html>
