@@ -40,6 +40,65 @@
 		
 		
 	</table>
-
+	
+	<br><br>
+	
+	<h3 th:inline="text"> For a Weekend getaway to: [[${targetCity.Name}]] <br>
+	sign up below</h3>
+	
+	<form action="#" th:action="@{/cities/reservation}" target="_self" method="post">
+		
+		<label for="cityName">City Name </label>
+		<input name="cityName" id="cityName" type="text" th:attr="value=${targetCity.Name}" readonly></input>	
+		
+		<br>		
+		<label for="emailInput">Email: </label>
+		<input name="emailInput" id="emailInput" type="text" ></input>
+	
+		<br>
+		<input type="radio" id="lux" name="typeOfTrip" value="lux">
+		<label for="lux">Luxury $1000</label>
+		
+		<br>
+		<input type="radio" id="vg" name="typeOfTrip" value="vg">
+		<label for="vg">Very Good $500</label>
+		
+		<br>
+		<input type="radio" id="g" name="typeOfTrip" value="g">
+		<label for="g">Good $350</label>
+		
+		<br>
+		<input type="submit" value="Submit">
+		
+	</form>
+	
+	
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

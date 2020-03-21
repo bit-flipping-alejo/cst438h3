@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import cst438.service.City;
 import cst438.service.CityService;
@@ -35,6 +37,31 @@ public class CityController {
       
       return "CityInfo";
    }
+   
+   @PostMapping("/cities/reservation")
+   public String createReservation( @RequestParam("cityName") String cityName, 
+         @RequestParam("typeOfTrip") String typeOfTrip, @RequestParam("emailInput") String emailInput, 
+         Model model) {
+      
+      model.addAttribute("cityName", cityName);
+      model.addAttribute("typeOfTrip", typeOfTrip);
+      model.addAttribute("emailInput", emailInput);
+      cityServ.requestReservation(cityName, typeOfTrip, emailInput);
+      
+      return "request_reservation";
+   }
      
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
